@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "c7083db7-c1cd-4330-81e1-e445034554c6",
+		"name": "MattyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47272500",
+		"_collection_link": "https://shivanshukumargupta6969-585776.postman.co/workspace/Shivanshu-kumar-gupta's-Workspa~2db2da12-4017-4cf8-82a3-3f6dd98fd371/collection/47272500-c7083db7-c1cd-4330-81e1-e445034554c6?action=share&source=collection_link&creator=47272500"
+	},
+	"item": [
+		{
+			"name": "Registered User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"testuser\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Design",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGRjYWJmMTE1M2M2YTYwNzEyOTY0OSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU0MTI4NDQ5LCJleHAiOjE3NTQyMTQ4NDl9.Prjn75V9BgTYj_vl4BkSGdhx1syviRRAeVJnBURz7UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My First Design\",\r\n  \"jsonData\": {\r\n    \"children\": [\r\n      {\r\n        \"className\": \"Text\",\r\n        \"attrs\": {\r\n          \"text\": \"Hello World\",\r\n          \"x\": 50,\r\n          \"y\": 50,\r\n          \"fontSize\": 24,\r\n          \"fill\": \"black\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"thumbnailUrl\": \"https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/sample.png\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/designs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"designs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Design",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGRjYWJmMTE1M2M2YTYwNzEyOTY0OSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU0MTI4NDQ5LCJleHAiOjE3NTQyMTQ4NDl9.Prjn75V9BgTYj_vl4BkSGdhx1syviRRAeVJnBURz7UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/designs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"designs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Design",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGRjYWJmMTE1M2M2YTYwNzEyOTY0OSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU0MTI4NDQ5LCJleHAiOjE3NTQyMTQ4NDl9.Prjn75V9BgTYj_vl4BkSGdhx1syviRRAeVJnBURz7UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My Renamed Design\",\r\n  \"thumbnailUrl\": \"https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/new-thumb.png\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/designs/688de4ec8c6c247c6afd8bc6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"designs",
+						"688de4ec8c6c247c6afd8bc6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Design",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGRjYWJmMTE1M2M2YTYwNzEyOTY0OSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzU0MTI4NDQ5LCJleHAiOjE3NTQyMTQ4NDl9.Prjn75V9BgTYj_vl4BkSGdhx1syviRRAeVJnBURz7UM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/designs/688de4ec8c6c247c6afd8bc6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"designs",
+						"688de4ec8c6c247c6afd8bc6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
